@@ -1,7 +1,7 @@
 class Init{
-    constructor(props) {
-        console.log('Olá Mundo');
+    constructor(name) {
+        console.log('Olá '+ name);
     }
 }
 
-new Init();
+new Init('José Eduardo');

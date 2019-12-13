@@ -2,10 +2,13 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    mode: 'development',
     entry: path.resolve(__dirname, 'src/main.js'),
     output: {
         path: path.resolve(__dirname, 'dist')
+    },
+    devServer: {
+        contentBase: path.resolve(__dirname, 'dist'),
+        port: 9000
     },
     module: {
         rules: [
