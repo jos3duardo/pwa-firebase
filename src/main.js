@@ -1,1 +1,7 @@
-console.log('Olá Mundo');
+class Init{
+    constructor(props) {
+        console.log('Olá Mundo');
+    }
+}
+
+new Init();
