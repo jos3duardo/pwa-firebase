@@ -17,6 +17,17 @@ module.exports = {
                 loader: 'babel-loader'
             },
             {
+                test: /\.html$/,
+                use: [
+                    {
+                        loader: "html-loader",
+                        options: {
+                            minimize:false
+                        }
+                    }
+                ]
+            },
+            {
                 test: /\.(s*)css$/,
                 use: ['style-loader','css-loader','sass-loader']
             }

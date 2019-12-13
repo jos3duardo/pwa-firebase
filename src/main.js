@@ -1,8 +1,10 @@
 require('./styule.scss');
+let partial = require('./partial.html')
 
 class Init{
     constructor(name) {
-        console.log('Olá '+ name);
+        let app = document.getElementById('app')
+        app.innerHTML = partial;
     }
 }
 
