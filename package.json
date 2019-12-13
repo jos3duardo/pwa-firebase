@@ -1,0 +1,25 @@
+{
+  "name": "drive-virtual-pwa-firebase",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jos3duardo/pwa-firebase.git"
+  },
+  "keywords": [],
+  "author": "José Eduardo <jos3duardolopes@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jos3duardo/pwa-firebase/issues"
+  },
+  "homepage": "https://github.com/jos3duardo/pwa-firebase#readme",
+  "dependencies": {
+    "@babel/core": "^7.7.5",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}
