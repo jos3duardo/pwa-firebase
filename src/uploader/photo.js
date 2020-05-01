@@ -8,6 +8,18 @@ document.getElementById('cancel-photo').addEventListener('click', function (e) {
     photoModal.className = 'modal'
 })
 
+const startVideo = function(id){
+    let config = {
+        video: {deviceId: id},
+        audio: false
+    }
+
+    let sucees = (stream) => {
+        console.log('video rolando')
+    }
+    navigator.getUserMedia(config, sucees, (err) => console.log(err))
+}
+
 navigator.mediaDevices.enumerateDevices().then((devices) => {
     let options = []
     devices.forEach((device) => {
@@ -29,6 +41,11 @@ navigator.mediaDevices.enumerateDevices().then((devices) => {
     })
 
     menuCamera.innerHTML = html;
+
+    document.querySelector('#photo-choice .menu-camera a').addEventListener('click', function (e) {
+        e.preventDefault()
+        startVideo(e.target.dataset.camera)
+    } )
 })
 
 export default function () {
