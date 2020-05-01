@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/jos3duardo/pwa-firebase#readme",
   "dependencies": {
+    "font-awesome": "^4.7.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
   },

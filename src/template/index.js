@@ -1,4 +1,5 @@
 require('./style.scss');
+require('font-awesome/css/font-awesome.css');
 
 let header = require('./header.html');
 let content = require('./content.html');
