@@ -5,7 +5,10 @@ export default {
     template:require('./template.html'),
     action(){
 
-        getDate('/files/1')
+        getDate({
+            id: '/files/1',
+            title: 'home'
+        })
         onClick()
 
     }

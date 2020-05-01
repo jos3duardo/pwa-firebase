@@ -11,7 +11,10 @@ export default function () {
 
         if (element.tagName === 'A'){
             if (element.dataset.type === 'folder-open'){
-                getDate(element.dataset.fid)
+                getDate({
+                    id: element.dataset.fid,
+                    title: element.dataset.title
+                })
             }else {
                 console.log('download do arquivo')
             }
