@@ -1,11 +1,12 @@
 require('./styule.scss');
-let partial = require('./partial.html')
 
 class Init{
     constructor() {
-        // let component = require('./index/')
-        let app = document.getElementById('app')
-        app.innerHTML = partial;
+        let component = require('./template/');
+        let app = document.getElementById('app');
+        app.innerHTML = component.template;
+        component.action();
+
     }
 }
 
