@@ -1,4 +1,3 @@
-import { app } from './firebase'
 import  templateComponent  from './template'
 import  file_list  from './files_list'
 
