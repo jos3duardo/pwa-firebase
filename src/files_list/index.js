@@ -3,13 +3,13 @@ import onClick from './on_click';
 require('./style.scss');
 
 export default {
+    el: '#main',
     template:require('./template.html'),
-    action(){
-
+    afterBind(){
         getDate({
             id: '/files/1',
             title: 'home'
-        })
+        });
         onClick()
 
     }
