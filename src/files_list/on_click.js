@@ -16,7 +16,10 @@ export default function () {
                     title: element.dataset.title
                 })
             }else {
-                console.log('download do arquivo')
+               let link = document.createElement('A')
+                link.setAttribute('href', element.getAttribute('href'));
+                link.setAttribute('target', element.getAttribute('_blank'));
+                link.click();
             }
         }
         // console.log(e.target.tagName)
