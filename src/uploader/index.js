@@ -1,3 +1,5 @@
+import file from './file'
+
 export default {
     el: '#footer',
     template: require('./template.html'),
@@ -15,7 +17,7 @@ export default {
                 if (element.tagName === 'A'){
                     switch (element.dataset.uploadType){
                         case 'file':
-                            console.log('faça o upload');
+                            file()
                             break;
                         case 'folder':
                             console.log('cria doiretorio');
