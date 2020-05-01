@@ -20,6 +20,10 @@
   }
 }
 
+#wrapper, #sidebar {
+  transition:  ease .5s all;
+}
+
 #sidebar{
   background: #0984e3;
   color: #dfe6e9;
