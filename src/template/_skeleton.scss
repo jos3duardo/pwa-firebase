@@ -1,0 +1,13 @@
+#wrapper{
+  display: flex;
+  flex-direction: column;
+
+  #main {
+    flex: 1;
+    overflow: auto;
+  }
+
+  #footer {
+    height: 80px;
+  }
+}
