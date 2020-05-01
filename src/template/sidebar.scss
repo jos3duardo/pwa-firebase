@@ -1,0 +1,25 @@
+#wrapper {
+  position: absolute;
+  left: 0;
+}
+
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: -350px;
+  width: 350px;
+}
+
+.show-menu {
+  #wrapper {
+    left: 350px;
+  }
+
+  #sidebar{
+    left: 0;
+  }
+}
+
+#sidebar{
+
+}
