@@ -2,6 +2,7 @@ import file from './file'
 import folder from './folder'
 import photo from "./photo";
 import audio from "./audio";
+import note from "./note";
 
 export default {
     el: '#footer',
@@ -32,7 +33,7 @@ export default {
                             audio()
                             break;
                         case 'note':
-                            console.log('escreve nota');
+                            note()
                             break;
                     }
                 }

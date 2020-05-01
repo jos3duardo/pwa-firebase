@@ -1,8 +1,11 @@
 import uploader from "./utils/uploader";
 
 require('./photo/style.scss')
-let template = require('./photo/template.html')
-document.querySelector('body').innerHTML += template;
+
+let template = document.createElement('template')
+template.innerHTML = require('./photo/template.html')
+template = template.content.childNodes;
+document.querySelector('body').appendChild(template[0])
 
 let streamVideo;
 
