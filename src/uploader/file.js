@@ -1,13 +1,9 @@
 import { app } from "../firebase";
-import { foldersPath } from "../files_list/firebase_get_data";
+import getPath from "./utils/path";
 
 export default function () {
-    let path = '/';
-    foldersPath.forEach((item, key) => {
-        if (key > 0){
-            path += item.id + '/'
-        }
-    });
+
+    let path = getPath()
 
     let fileInput = document.getElementById('file');
     fileInput.click()
@@ -26,10 +22,4 @@ export default function () {
         })
 
     })
-    function setUtl(url) {
-        console.log(url)
-
-        return url;
-    }
-
 }

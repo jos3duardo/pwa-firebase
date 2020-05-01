@@ -1,4 +1,5 @@
 import file from './file'
+import folder from './folder'
 
 export default {
     el: '#footer',
@@ -20,7 +21,7 @@ export default {
                             file()
                             break;
                         case 'folder':
-                            console.log('cria doiretorio');
+                            folder()
                             break;
                         case 'photo':
                             console.log('tira foto');
