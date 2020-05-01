@@ -14,8 +14,12 @@ const startVideo = function(id){
         audio: false
     }
 
+    let video = document.createElement('video')
+    document.getElementById('photo-viewer').appendChild(video)
     let sucees = (stream) => {
-        console.log('video rolando')
+        console.log(stream)
+        video.srcObject = stream
+        video.play()
     }
     navigator.getUserMedia(config, sucees, (err) => console.log(err))
 }
@@ -31,7 +35,6 @@ navigator.mediaDevices.enumerateDevices().then((devices) => {
 
     let menuCamera = document.querySelector('#photo-choice .menu-camera')
     let partialTemplate = menuCamera.innerHTML;
-    console.log(partialTemplate)
     let html = '';
     options.forEach( (device) => {
         let label = device.label || 'Camera'
@@ -45,6 +48,7 @@ navigator.mediaDevices.enumerateDevices().then((devices) => {
     document.querySelector('#photo-choice .menu-camera a').addEventListener('click', function (e) {
         e.preventDefault()
         startVideo(e.target.dataset.camera)
+        document.getElementById('photo-choice').setAttribute('style','display: none')
     } )
 })
 
