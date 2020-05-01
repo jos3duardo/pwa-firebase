@@ -13,14 +13,32 @@ export default {
             let html = '';
             for (let index in data){
                 html += partial
-                    .replace('{{ title }}', data[index].title)
-                    .replace('{{ type }}', data[index].type)
+                    .replace(/{{ title }}/g, data[index].title)
+                    .replace(/{{ type }}/g, data[index].type)
             }
 
             document.querySelector('#main .files').innerHTML = html
         })
 
+        let onClick = (e) => {
+            e.preventDefault();
+            let element = e.target;
 
+            if (e.target.tagName === 'I'){
+                element = e.target.parentElement;
+            }
+
+            if (element.tagName === 'A'){
+                if (element.dataset.type === 'folder-open'){
+                    console.log('abre a pasta')
+                }else {
+                    console.log('download do arquivo')
+                }
+            }
+            console.log(e.target.tagName)
+        };
+
+        document.querySelector('#main').addEventListener('click', onClick)
 
 
 
