@@ -3,9 +3,9 @@ let partial = require('./partial.html')
 
 class Init{
     constructor() {
-        let component = require('./index/')
+        // let component = require('./index/')
         let app = document.getElementById('app')
-        app.innerHTML = component;
+        app.innerHTML = partial;
     }
 }
 
