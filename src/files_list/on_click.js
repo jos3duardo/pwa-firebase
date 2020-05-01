@@ -1,4 +1,4 @@
-import getDate from './update_data';
+import getDate from './firebase_get_data';
 
 export default function () {
     let onClick = (e) => {
@@ -11,7 +11,7 @@ export default function () {
 
         if (element.tagName === 'A'){
             if (element.dataset.type === 'folder-open'){
-                getDate('/files/1/' + element.dataset.fid)
+                getDate(element.dataset.fid)
             }else {
                 console.log('download do arquivo')
             }

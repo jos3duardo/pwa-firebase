@@ -1,4 +1,4 @@
-import getDate from './update_data';
+import getDate from './firebase_get_data';
 import onClick from './on_click';
 
 export default {
