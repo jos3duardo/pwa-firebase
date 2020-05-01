@@ -1,4 +1,4 @@
-require('./styule.scss');
+require('./style.scss');
 
 let header = require('./header.html');
 let content = require('./content.html');
