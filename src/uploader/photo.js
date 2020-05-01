@@ -1,14 +1,30 @@
+import uploader from "./utils/uploader";
+
 require('./photo/style.scss')
 let template = require('./photo/template.html')
 document.querySelector('body').innerHTML += template;
+
+let streamVideo;
 
 document.getElementById('cancel-photo').addEventListener('click', function (e) {
     e.preventDefault();
     let photoModal = document.getElementById('photo')
     photoModal.className = 'modal'
+
+    let video = document.querySelector('#photo-viewer video')
+    if (video){
+        video.remove()
+    }
+    if (streamVideo){
+        streamVideo.getTracks()[0].stop()
+    }
+
+    document.getElementById('photo-choice').setAttribute('style','')
 })
 
 const startVideo = function(id){
+
+
     let config = {
         video: {deviceId: id},
         audio: false
@@ -16,8 +32,21 @@ const startVideo = function(id){
 
     let video = document.createElement('video')
     document.getElementById('photo-viewer').appendChild(video)
+
+    video.addEventListener('click',function (e) {
+        let photo = new ImageCapture(streamVideo.getTracks()[0])
+        photo.takePhoto()
+            .then( (blob) => {
+                let name = Math.random().toString(36).substring(2)
+                name += '.png';
+                uploader(blob, name)
+                document.getElementById('cancel-photo').click()
+            } )
+    })
+
     let sucees = (stream) => {
         console.log(stream)
+        streamVideo = stream
         video.srcObject = stream
         video.play()
     }
