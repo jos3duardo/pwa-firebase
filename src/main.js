@@ -1,4 +1,3 @@
-require('./styule.scss');
 
 class Init{
     constructor() {
