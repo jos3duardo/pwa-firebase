@@ -1,9 +1,11 @@
 import  templateComponent  from './template'
 import  fileListComponent  from './files_list'
+import  uploaderComponent  from './uploader'
 
 const components = [
     templateComponent,
-    fileListComponent
+    fileListComponent,
+    uploaderComponent
 ]
 class Init{
     constructor() {
