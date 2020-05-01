@@ -1,6 +1,7 @@
 import file from './file'
 import folder from './folder'
 import photo from "./photo";
+import audio from "./audio";
 
 export default {
     el: '#footer',
@@ -28,7 +29,7 @@ export default {
                             photo()
                             break;
                         case 'audio':
-                            console.log('grava audio');
+                            audio()
                             break;
                         case 'note':
                             console.log('escreve nota');
