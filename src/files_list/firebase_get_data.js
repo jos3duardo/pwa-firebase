@@ -1,7 +1,7 @@
 import { app } from '../firebase'
 import getDate from './update_data';
 
-let foldersPath = []
+export const foldersPath = []
 
 export default function (reference) {
     let position = foldersPath.findIndex((e) => e.id === reference.id );
@@ -9,7 +9,7 @@ export default function (reference) {
     if (position === -1){
         foldersPath.push(reference)
     }else{
-        foldersPath = foldersPath.slice(0, position + 1)
+        foldersPath.splice( position + 1, foldersPath.length - position )
     }
 
     let firebase_ref = '';
