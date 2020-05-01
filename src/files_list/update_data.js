@@ -1,11 +1,27 @@
 
 
 export default function (snapshot) {
-
     let data = snapshot.val()
+
     data = Object.entries(data)
 
     let partial = require('./partial.html');
+
+    //ordening for alphabetic
+    data.sort((a,b) => {
+        if (typeof   a[1] != 'object'){
+            return true;
+        }
+        return a[1].title.localeCompare(b[1].title)
+    });
+
+    // directory first
+    data.sort((a,b) => {
+        if (typeof a[1] != 'object'){
+            return true;
+        }
+        return a[1].type
+    });
 
     let html = '';
     for (let index in data){
