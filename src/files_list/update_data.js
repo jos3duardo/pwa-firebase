@@ -2,6 +2,12 @@ import folder from "../uploader/folder";
 
 export default function (snapshot) {
     let data = snapshot.val()
+
+    if (!data){
+        document.querySelector('#main .files').innerHTML = 'Nenhum diretório ou arquivo encotrado'
+        return;
+    }
+
     data = Object.entries(data)
 
     let partial = require('./partial.html');

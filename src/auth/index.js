@@ -1,5 +1,7 @@
 import { app } from '../firebase'
-import { authCreateEmail} from "./auth/email";
+import { authCreateEmail } from "./auth/email";
+import { UserClass } from './user'
+import  fileListComponent  from '../files_list'
 
 let template = document.createElement('template')
 template.innerHTML = require('./template.html')
@@ -13,7 +15,13 @@ export default {
     afterBind () {
         app.auth().onAuthStateChanged(function (user) {
             if (user) {
-                console.log('estou autenticado')
+                const userInstance = new UserClass;
+                userInstance.user = user;
+
+                let element = document.querySelector(fileListComponent.el);
+                element.innerHTML = fileListComponent.template;
+                fileListComponent.afterBind();
+
             }else{
                 const auth = document.getElementById('auth')
                 auth.className = 'modal open'
