@@ -1,4 +1,5 @@
 require('./style.scss')
+import uploader from "../utils/uploader";
 
 let element = document.querySelector('body');
 element.className = 'drag';
@@ -22,5 +23,10 @@ const hideDragAndDrop = (e) => {
     element.className = classCollection.join(' ');
 }
 
+element.addEventListener('drop', (e) => {
+    hideDragAndDrop(e)
+
+    uploader(e.dataTransfer.files[0], e.dataTransfer.files[0].name)
+})
 element.addEventListener('dragover', showDragAndDrop)
 element.addEventListener('dragleave', hideDragAndDrop)
