@@ -1,4 +1,5 @@
 import { app } from '../firebase'
+import { authCreateEmail} from "./auth/email";
 
 let template = document.createElement('template')
 template.innerHTML = require('./template.html')
@@ -14,7 +15,18 @@ export default {
             if (user) {
                 console.log('estou autenticado')
             }else{
-                console.log('quero me autenticado')
+                const auth = document.getElementById('auth')
+                auth.className = 'modal open'
+                document.querySelector('#auth-email').addEventListener('click', function (e) {
+                    e.preventDefault()
+                    console.log('login')
+
+                })
+                document.querySelector('#auth-create-email').addEventListener('click', function (e) {
+                    e.preventDefault()
+                   authCreateEmail()
+
+                })
             }
         })
     }
