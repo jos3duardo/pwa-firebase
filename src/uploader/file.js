@@ -1,6 +1,7 @@
 import { app } from "../firebase";
 import uploader from "./utils/uploader";
 
+require('./file/dragAndDrop')
 export default function () {
 
     let fileInput = document.getElementById('file');
