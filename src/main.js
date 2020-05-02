@@ -1,18 +1,22 @@
 import  templateComponent  from './template'
 import  fileListComponent  from './files_list'
 import  uploaderComponent  from './uploader'
+import  authComponent  from './auth'
 
 const components = [
     templateComponent,
     fileListComponent,
-    uploaderComponent
+    uploaderComponent,
+    authComponent
 ]
 class Init{
     constructor() {
 
         components.forEach((component) => {
-            let element = document.querySelector(component.el);
-            element.innerHTML = component.template;
+            if (component.el){
+                let element = document.querySelector(component.el);
+                element.innerHTML = component.template;
+            }
             component.afterBind();
 
         })
