@@ -1,6 +1,5 @@
 import folder from "../uploader/folder";
 
-
 export default function (snapshot) {
     let data = snapshot.val()
     data = Object.entries(data)
@@ -19,8 +18,6 @@ export default function (snapshot) {
             file.push(item)
         }
     })
-
-    console.log(file, folder)
     // file.sort( (a, b) => a[1].title.localeCompare(b[1].title));
     folder.sort( (a, b) => a[1].title.localeCompare(b[1].title));
 
