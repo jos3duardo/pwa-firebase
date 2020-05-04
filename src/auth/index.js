@@ -1,5 +1,5 @@
 import { app } from '../firebase'
-import { authCreateEmail } from "./auth/email";
+import { authCreateEmail, authEmail } from "./auth/email";
 import { UserClass } from './user'
 import  fileListComponent  from '../files_list'
 
@@ -22,12 +22,14 @@ export default {
                 element.innerHTML = fileListComponent.template;
                 fileListComponent.afterBind();
 
+                const auth = document.getElementById('auth')
+                auth.className = 'modal'
             }else{
                 const auth = document.getElementById('auth')
                 auth.className = 'modal open'
                 document.querySelector('#auth-email').addEventListener('click', function (e) {
                     e.preventDefault()
-                    console.log('login')
+                    authEmail()
 
                 })
                 document.querySelector('#auth-create-email').addEventListener('click', function (e) {
