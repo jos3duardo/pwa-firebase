@@ -32,6 +32,6 @@ preview do app instalado no celular, ao acessar o link do projeto é mostrado um
  
 ![](git/app1.png)
   
-após a instalção é criado um icone na tela do celular e o sistema ja pode ser acessado localmente, funcionando até mesmo sem internet  
+após a instalção é criado um icone na tela do celular e o sistema ja pode ser acessado localmente, funcionando até mesmo sem internet    
 
 ![](git/app2.png)  ![](git/app4.png)  ![](git/app3.png)
