@@ -1,4 +1,5 @@
 import sharer from "./sharer";
+import "./sharedList";
 
 require('./style.scss');
 require('./usage')
