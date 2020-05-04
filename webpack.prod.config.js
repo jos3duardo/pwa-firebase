@@ -3,6 +3,12 @@ const webpackBase = require('./webpack.config')
 const CompressionWebPackPlugin = require('compression-webpack-plugin')
 const WorkbosPlugin = require('workbox-webpack-plugin')
 const webpack = require('webpack')
+const rimraf = require('rimraf');
+const fs = require('fs');
+
+if (fs.existsSync('./dist')) {
+    rimraf('./dist', () => console.log('./dist removed'));
+}
 
 module.exports = merge(webpackBase, {
     plugins: [
