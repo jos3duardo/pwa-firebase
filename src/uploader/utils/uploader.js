@@ -19,11 +19,17 @@ export default function (file, name) {
                 title: name,
                 url: url,
                 size: snapshot.totalBytes
-
             })
         })
 
         let totalBytes = snapshot.totalBytes;
         // console.log(totalBytes)
+
+        let userRef = app.database().ref('/users/' + userInstance.user.uid + '/usage')
+
+        userRef.once('value', (snapshot) => {
+            let size = snapshot.val() || 0;
+            userRef.set(totalBytes + size)
+        }, err => console.log(err))
     })
 }
