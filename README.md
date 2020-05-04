@@ -1,35 +1,26 @@
 # pwa-firebase
-```bash
-npm i
-```
+
+## Sobre o projeto
+
+Neste projeto foi criado um HD Virtual para hospedar arquivos na nuvem 
+enquanto usamos Progressive Web Apps, que são aplicativos web que se 
+aproximam do nativo, com opção de ser instalado, disponibilidade offline 
+do aplicativo e outros acessos a recursos, que antes, só aplicativos nativos poderiam. 
+Utilizei vários recursos do Firebase, como o Database para servir os dados e registro de arquivos, 
+o Hosting para hospedar, o Storage para hospedar os arquivos, o Authentication para a autorização ao
+ aplicativo, dicas de segurança, enfim, tudo o que você precisa para criar um aplicativo web sem 
+ precisar de uma linguagem ou aplicativo específico no servidor, totalmente front-end. 
+ O nosso HD Virtual vai contar, além dos recursos nativos do PWA e do Firebase, com opção de 
+ multiplos usuários, cota de espaço, acesso a recursos como gravar audio, tirar foto e 
+ compartilhamento de arquivos.
+
+preview telas do sistema  na versão mobile  
+![](git/mobile.png)![](git/mobile2.png)![](git/mobile3.png)  
 
 
-firebase rules
-```bash
-{
-  "rules": {
-    "files": {
-      "$uid": {
-        ".read": "$uid === auth.uid || root.child('/shared/').child(auth.uid).child($uid).exists()",
-        ".write": "$uid === auth.uid",
-        ".validate": " root.child('/users/').child($uid).child('/usage').val() == null ||
-        root.child('/users/').child($uid).child('/usage').val() <= 1073741824"  
-      }
-    },
-    "users": {
-    "$uid": {
-      ".read": "$uid === auth.uid",
-      ".write": "$uid === auth.uid"
-    	}
-  	},
-    "sharer": {
-      ".read": "auth.uid !== null",
-      ".write": "auth.uid !== null"
-  	},
-    "shared": {
-      ".read": "auth.uid !== null",
-      ".write": "auth.uid !== null"
-  	}
-  }
-}
-```
+preview telas do sistema na versão web  
+![](git/web1.png)![](git/web2.png)
+
+preview tela do aplicativo instalado com menu lateral aberto  
+![](git/pwa.png)
+
