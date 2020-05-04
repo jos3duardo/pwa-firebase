@@ -1,5 +1,3 @@
-# pwa-firebase
-
 ## Sobre o projeto
 
 Neste projeto foi criado um HD Virtual para hospedar arquivos na nuvem 
@@ -14,13 +12,21 @@ o Hosting para hospedar, o Storage para hospedar os arquivos, o Authentication p
  multiplos usuários, cota de espaço, acesso a recursos como gravar audio, tirar foto e 
  compartilhamento de arquivos.
 
+#### sistema esta online [neste endereço](https://pwa-drive-734e0.web.app/)
+
+para rodar uma aplicação local deste sistema consulte o arquivo [install](INSTALL.md) e siga os passos descritos la
+
 preview telas do sistema  na versão mobile  
 ![](git/mobile.png)![](git/mobile2.png)![](git/mobile3.png)  
 
 
 preview telas do sistema na versão web  
-![](git/web1.png)![](git/web2.png)
+![](git/web1.png)  
 
-preview tela do aplicativo instalado com menu lateral aberto  
+![](git/web2.png)
+
+preview tela do aplicativo instalado em um computador com menu lateral aberto  
 ![](git/pwa.png)
 
+preview do app instalado no celular  
+![](git/app1.png)  ![](git/app2.png)  ![](git/app4.png)  ![](git/app3.png)
