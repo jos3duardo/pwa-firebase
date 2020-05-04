@@ -5,9 +5,11 @@ import { UserClass } from '../../auth/user'
 export default function (file, name) {
     let path = getPath()
     const storareRef = app.storage().ref();
-    let fileRef = storareRef.child('/files/'+ userInstance.user.uid + name)
+
 
     let userInstance = new UserClass();
+
+    let fileRef = storareRef.child('files/'+ userInstance.user.uid + name)
 
     fileRef.put(file).then((snapshot) => {
         let folderRef = app.database().ref('files/'+  userInstance.user.uid + path);
