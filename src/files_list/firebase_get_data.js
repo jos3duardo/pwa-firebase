@@ -17,7 +17,7 @@ export default function (reference) {
 
     for (let index in foldersPath){
         firebase_ref += foldersPath[index].id + '/';
-        breadcrumbs += ` | <a href="" data-type="folder-open" data-fid="${foldersPath[index].id}">${foldersPath[index].title}</a>`
+        breadcrumbs += ` > <a href="" data-type="folder-open" data-fid="${foldersPath[index].id}">${foldersPath[index].title}</a>`
     }
 
     let database = app.database();

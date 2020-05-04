@@ -8,7 +8,7 @@ app.auth().onAuthStateChanged(function (user) {
             let sharedList = snapshot.val();
             let html = '';
             for (let index in sharedList){
-                html += '<li> <a href="?frive='+ sharedList[index].uid +'">'+ sharedList[index].email +'</a></li>'
+                html += '<li> <a href="?drive='+ sharedList[index].uid +'&email='+ sharedList[index].email +'">'+ sharedList[index].email +'</a></li>'
             }
             if (html != ''){
                 html += '<li><a href="/">Ver o meu</a></li>';
@@ -17,5 +17,4 @@ app.auth().onAuthStateChanged(function (user) {
             document.getElementById("shared-list").innerHTML = html
         })
     }
-
 })
