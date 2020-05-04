@@ -29,7 +29,7 @@ export default {
         let openMenuEvent = function (e) {
             e.preventDefault();
             let body = document.querySelector('body');
-            body.className += "show-menu";
+            body.className += " show-menu";
             body.className = body.className.trim()
 
             closeMenu.addEventListener('click',  closeMenuEvent,true);
