@@ -17,6 +17,16 @@ class Init{
             component.afterBind();
 
         })
+
+        if (process.env.NODE_ENV === 'production'){
+            this.registerSW()
+        }
+    }
+
+    registerSW(){
+        if ('serviceWorker' in navigator){
+            navigator.serviceWorker.register('./service-worker.js')
+        }
     }
 }
 
