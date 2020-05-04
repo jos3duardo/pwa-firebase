@@ -28,5 +28,8 @@ preview telas do sistema na versão web
 preview tela do aplicativo instalado em um computador com menu lateral aberto  
 ![](git/pwa.png)
 
-preview do app instalado no celular  
-![](git/app1.png)  ![](git/app2.png)  ![](git/app4.png)  ![](git/app3.png)
+preview do app instalado no celular, ao acessar o link do projeto é mostrado uma mensagem para adicionar o aplicativo a tela  
+![](git/app1.png)
+  
+após a instalção é criado um icone na tela do celular e o sistema ja pode ser acessado localmente, funcionando até mesmo sem internet
+![](git/app2.png)  ![](git/app4.png)  ![](git/app3.png)
