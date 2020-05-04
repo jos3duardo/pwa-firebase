@@ -12,12 +12,18 @@ export default function (file, name) {
     fileRef.put(file).then((snapshot) => {
         let folderRef = app.database().ref('files/'+  userInstance.user.uid + path);
 
+
         snapshot.ref.getDownloadURL().then(function(url) {
             folderRef.push({
                 type: 'file',
                 title: name,
-                url: url
+                url: url,
+                size: snapshot.totalBytes
+
             })
         })
+
+        let totalBytes = snapshot.totalBytes;
+        // console.log(totalBytes)
     })
 }
