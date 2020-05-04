@@ -24,6 +24,12 @@ export default {
 
                 const auth = document.getElementById('auth')
                 auth.className = 'modal'
+
+                const sha1 = require('js-sha1');
+
+                let ref = app.database().ref('/sharer/' + sha1(user.email));
+
+                ref.set(user.uid)
             }else{
                 const auth = document.getElementById('auth')
                 auth.className = 'modal open'
